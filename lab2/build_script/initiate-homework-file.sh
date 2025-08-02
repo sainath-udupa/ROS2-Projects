@@ -26,7 +26,7 @@ nano setup.py
 
 entry_points={
     'console_scripts': [
-        'janyu_node = your_package_name.mahe_janyu:main',
+        'mahe_janyu = your_package_name.mahe_janyu:main',
     ],
 },
 

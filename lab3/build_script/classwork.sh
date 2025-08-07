@@ -34,5 +34,7 @@ nano setup.py
 cd ~/your_name_ws
 colcon build
 source install/setup.bash
+
+#we'll use `run` command only for publisher and subscriber node, for the launch file we'll use `ros2 launch ......`
 ros2 run your_package_name publisher
 

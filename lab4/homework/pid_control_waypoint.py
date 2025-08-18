@@ -6,7 +6,7 @@ from geometry_msgs.msg import Twist
 from turtlesim.srv import Spawn, SetPen, TeleportAbsolute
 from turtlesim.msg import Pose
 
-#use any alphabet according to your name's first letter
+# use any below given alphabet according to your name's first letter and comment out other alphabets, you can remove them too
 Letter_dict = {
      'A':[(0,0.5,2),(1,0,0),(0,0.5,2),(1,1,0),(0,0.25,1),(1,0.75,1)],
      'B':[(0,0,2),(1,0,0),(0,0,2),(1,0.5,2),(1,0.5,1),(1,0,1),(1,1,1),(1,1,0),(1,0,0)],
@@ -108,22 +108,18 @@ class TurtleWriter(Node):
                 continue
             self.move_to(dst)
 
-    def write(self, string):
+    def writeAll(self):
         currentX, currentY = 5.5, 5.5
         standardWidth, standardHeight = 2.5, 5.0
         gap = 1.0
-        for ch in string:
-            if ch == ' ':
-                currentX += gap
-                continue
+        for ch in Letter_dict.keys():
             self.writeLetter(ch, currentX, currentY, standardWidth, 2*standardWidth)
             currentX += standardWidth + gap
 
 def main(args=None):
     rclpy.init(args=args)
     node = TurtleWriter()
-    text = input("Enter text (A–Z) to draw: ")
-    node.write(text.upper())
+    node.writeAll()
     rclpy.shutdown()
 
 if __name__ == '__main__':

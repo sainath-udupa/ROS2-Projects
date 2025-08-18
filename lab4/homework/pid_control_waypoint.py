@@ -6,6 +6,7 @@ from geometry_msgs.msg import Twist
 from turtlesim.srv import Spawn, SetPen, TeleportAbsolute
 from turtlesim.msg import Pose
 
+#use any alphabet according to your name's first letter
 Letter_dict = {
      'A':[(0,0.5,2),(1,0,0),(0,0.5,2),(1,1,0),(0,0.25,1),(1,0.75,1)],
      'B':[(0,0,2),(1,0,0),(0,0,2),(1,0.5,2),(1,0.5,1),(1,0,1),(1,1,1),(1,1,0),(1,0,0)],

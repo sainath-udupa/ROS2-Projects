@@ -57,7 +57,6 @@ class MoveStraight(Node):
         # Turning code removed / commented out
         # elif self.state == "turn":
         # pass
-
         # Publish movement command
         self.vel_pub.publish(twist)
 
